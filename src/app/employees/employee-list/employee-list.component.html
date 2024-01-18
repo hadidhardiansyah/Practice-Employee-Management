@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h3>Employee List</h3>
+    <hr>
+    <div class="row">
+      <div class="col-xs-12">
+        <button class="btn btn-success" (click)="onNewEmployee()">New Employees <span class="bi bi-plus-lg"></span></button>
+      </div>
+    </div>
+    <app-employee
+    *ngFor="let employeeEl of employees; let i = index"
+    [employee]="employeeEl"
+    [index]="i"
+    >
+    </app-employee>
+  </div>
+</div>

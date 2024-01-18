@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-sm-8 col-md-offset-2">
+    <h3>Detail Employee</h3>
+    <hr>
+  </div>
+  <div class="col-sm-6 col-md-offset-3">
+    <div
+      class="list-group-item clearfix"
+    >
+      <div class="col-sm-4">
+        <p class="list-group-item-text">Username</p>
+        <p class="list-group-item-text">Full Name</p>
+        <p class="list-group-item-text">Email</p>
+        <p class="list-group-item-text">Birth Date</p>
+        <p class="list-group-item-text">Basic Salary</p>
+        <p class="list-group-item-text">Status</p>
+        <p class="list-group-item-text">Group</p>
+        <p class="list-group-item-text">Description</p>
+      </div>
+      <div class="col-sm-8">
+        <p class="list-group-item-text">: {{ employee.username }}</p>
+        <p class="list-group-item-text">: {{ employee.firstName }} {{ employee.lastName }}</p>
+        <p class="list-group-item-text">: {{ employee.email }}</p>
+        <p class="list-group-item-text">: {{ employee.birthDate }}</p>
+        <p class="list-group-item-text">: {{ employee.basicSalary }}</p>
+        <p class="list-group-item-text">: {{ employee.status }}</p>
+        <p class="list-group-item-text">: {{ employee.group }}</p>
+        <p class="list-group-item-text">: {{ employee.description }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-8 col-md-offset-2">
+    <button class="btn btn-danger" type="button" [routerLink]="['../../list']">Back</button>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div
+  class="list-group-item clearfix"
+>
+  <div class="pull-left">
+    <h4 class="list-group-item-heading">{{ employee.firstName }} {{ employee.lastName }}</h4>
+    <b class="list-group-item-text">{{ employee.group }}</b>
+    <p class="list-group-item-text">Status: {{ employee.status }}</p>
+  </div>
+  <span class="pull-right">
+    <button class="btn btn-primary">Edit</button>
+    <button class="btn btn-danger" (click)="onDeleteEmployee()">Delete</button>
+    <button class="btn btn-default" [routerLink]="[index]">Detail</button>
+  </span>
+
+</div>

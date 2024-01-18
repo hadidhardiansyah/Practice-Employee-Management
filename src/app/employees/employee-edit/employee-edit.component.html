@@ -1,0 +1,103 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h3>Add Employee</h3>
+    <hr>
+    <div class="col-xs-12">
+      <form>
+        <div class="row">
+          <div class="col-md-4">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              id="username"
+              class="form-control"
+              #usernameInput
+            >
+          </div>
+          <div class="col-md-4">
+            <label for="firstName">First Name</label>
+            <input
+              type="text"
+              id="firstName"
+              class="form-control"
+              #firstNameInput
+            >
+          </div>
+          <div class="col-md-4">
+            <label for="lastName">Last Name</label>
+            <input
+              type="text"
+              id="lastName"
+              class="form-control"
+              #lastNameInput
+            >
+          </div>
+          <div class="col-md-4">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              #email
+            >
+          </div>
+          <div class="col-md-4">
+            <label for="birthDate">Birth Date</label>
+            <input
+              type="date"
+              id="birthDate"
+              class="form-control"
+              #birthDate
+            >
+          </div>
+          <div class="col-md-4">
+            <label for="basicSalary">Basic Salary</label>
+            <input
+              type="number"
+              id="basicSalary"
+              class="form-control"
+              #basicSalary
+            >
+          </div>
+          <div class="col-md-4">
+            <label for="status">Status</label>
+            <input
+              type="text"
+              id="status"
+              class="form-control"
+              #status
+            >
+          </div>
+          <div class="col-md-4">
+            <label for="group">Group</label>
+            <input
+              type="text"
+              id="group"
+              class="form-control"
+              #group
+            >
+          </div>
+          <div class="col-md-4">
+            <label for="description">Description</label>
+            <input
+              type="date"
+              id="description"
+              class="form-control"
+              #description
+            >
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <button
+              class="btn btn-success"
+              type="submit"
+              (click)="onAddEmployee()"
+            >Save
+            </button>
+            <button class="btn btn-danger" [routerLink]="['../list']">Cancel</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
