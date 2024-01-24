@@ -45,7 +45,26 @@ export class EmployeeService {
 
   deleteEmployee(index: number) {
     this.employees.splice(index,1);
-    this.employeesChanged.emit(this.employees.slice());
     console.log(this.employees)
+  }
+
+  updateEmployee(index: number, employeeInfo: Employee) {
+    const employee = this.employees.find(
+      (e) => {
+        return e[index];
+      }
+    );
+    if (employee) {
+      employee.username = employeeInfo.username;
+      employee.firstName = employeeInfo.firstName;
+      employee.lastName = employeeInfo.lastName;
+      employee.email = employeeInfo.email;
+      employee.birthDate = employeeInfo.birthDate;
+      employee.basicSalary = employeeInfo.basicSalary;
+      employee.status = employeeInfo.status;
+      employee.group = employeeInfo.group;
+      employee.description = employeeInfo.description;
+    }
+    return employee;
   }
 }

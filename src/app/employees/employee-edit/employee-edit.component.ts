@@ -12,6 +12,8 @@ export class EmployeeEditComponent implements OnInit {
   id: number;
   editMode = false;
 
+
+
   @ViewChild('usernameInput') usernameInputRef: ElementRef;
   @ViewChild('firstNameInput') firstNameInputRe: ElementRef;
   @ViewChild('lastNameInput') lastNameInputRef: ElementRef;
@@ -52,5 +54,7 @@ export class EmployeeEditComponent implements OnInit {
     this.employeeService.addEmployee(newEmployee);
     this.router.navigate(['employees', 'list']);
   }
+
+
 
 }
