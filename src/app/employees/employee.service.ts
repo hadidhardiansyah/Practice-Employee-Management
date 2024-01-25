@@ -1,8 +1,9 @@
 import {Employee} from "./employee.model";
 import {EventEmitter} from "@angular/core";
+import {Subject} from "rxjs";
 
 export class EmployeeService {
-  employeesChanged = new EventEmitter<Employee[]>();
+  employeesChanged = new Subject<Employee[]>();
 
 
   employees: Employee[] = [
@@ -40,7 +41,7 @@ export class EmployeeService {
 
   addEmployee(employee: Employee) {
     this.employees.push(employee);
-    this.employeesChanged.emit(this.employees.slice());
+    this.employeesChanged.next(this.employees.slice());
   }
 
   deleteEmployee(index: number) {

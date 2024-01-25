@@ -1,18 +1,18 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, Params, Router} from "@angular/router";
 import {EmployeeService} from "../employee.service";
 import {Employee} from "../employee.model";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-employee-edit',
   templateUrl: './employee-edit.component.html',
   styleUrl: './employee-edit.component.css'
 })
-export class EmployeeEditComponent implements OnInit {
+export class EmployeeEditComponent implements OnInit, OnDestroy {
   id: number;
   editMode = false;
-
-
+  employeeChangeSub: Subscription;
 
   @ViewChild('usernameInput') usernameInputRef: ElementRef;
   @ViewChild('firstNameInput') firstNameInputRe: ElementRef;
@@ -31,13 +31,17 @@ export class EmployeeEditComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.route.params
+    this.employeeChangeSub = this.route.params
       .subscribe(
         (params: Params) => {
           this.id = +params['id'];
           this.editMode = params['id'] != null;
         }
       );
+  }
+
+  ngOnDestroy() {
+    this.employeeChangeSub.unsubscribe();
   }
 
   onAddEmployee() {
